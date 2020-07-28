@@ -2,6 +2,7 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
+import { YOUR_GIT_HUB_TOKEN } from '../../constants';
 import { GitHubSearchList } from '../../containers/GitHubSearchList';
 
 import * as Styled from './App.styled';
@@ -9,7 +10,7 @@ import * as Styled from './App.styled';
 const client = new ApolloClient({
 	uri: 'https://api.github.com/graphql',
 	headers: {
-		Authorization: 'token 0be5bed4ed968827e1956692dcf900c5d1c1ae44',
+		Authorization: `token ${YOUR_GIT_HUB_TOKEN}`,
 	},
 });
 

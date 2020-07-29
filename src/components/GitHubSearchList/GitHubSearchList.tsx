@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { ApolloError } from 'apollo-boost';
 
-import { PageLayout, Input, Spin, ListItem, Button } from '../../ui';
+import { PageLayout, Input, Spin, ListItem, Button, Box } from '../../ui';
 import { Data, SearchResultItemEdge } from '../../types';
 import { RepositoryInfoRow } from '../RepositoryInfoRow';
 
@@ -83,8 +83,8 @@ export const GitHubSearchList: React.FC<Props> = ({
 
 	return (
 		<>
-			<PageLayout renderHeader={renderHeader} className={className}>
-				{renderMain()}
+			<PageLayout className={className}>
+				<Box renderHeader={renderHeader}>{renderMain()}</Box>
 			</PageLayout>
 		</>
 	);

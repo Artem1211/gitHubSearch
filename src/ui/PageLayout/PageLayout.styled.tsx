@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
-const borderParams = '1px solid #e1e4e8';
-
 export const Wrapper = styled.div`
-	border: ${borderParams};
-	border-radius: 6px;
-`;
-
-export const Header = styled.div`
-	padding: 16px;
-	background-color: #f6f8fa;
-	border-bottom: ${borderParams};
+	padding: 40px 16px;
+	width: 100%;
+	max-width: 980px;
+	margin: 0 auto;
+	box-sizing: border-box;
 `;

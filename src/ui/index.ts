@@ -4,3 +4,4 @@ export { LanguageBlock } from './LanguageBlock';
 export { Spin } from './Spin';
 export { PageLayout } from './PageLayout';
 export { ListItem } from './ListItem';
+export { Box } from './Box';

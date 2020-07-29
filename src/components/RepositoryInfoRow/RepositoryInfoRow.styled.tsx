@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
 	position: relative;
 	background-color: #ffffff;
 	width: 100%;
 	box-sizing: border-box;
 `;
 
-export const Title = styled.a`
+const Title = styled.a`
 	margin-right: 5px;
 	display: flex;
 	align-items: flex-end;
@@ -22,12 +22,7 @@ export const Title = styled.a`
 	}
 `;
 
-export const TitleIcon = styled.span`
-	min-width: 16px;
-	margin-right: 3px;
-`;
-
-export const Content = styled.p`
+const Content = styled.p`
 	word-break: break-all;
 	font-size: 14px;
 	line-height: 1.5;
@@ -35,7 +30,7 @@ export const Content = styled.p`
 	width: 75%;
 `;
 
-export const BottomPanel = styled.div`
+const BottomPanel = styled.div`
 	font-size: 12px;
 	display: flex;
 	& > * {
@@ -43,13 +38,13 @@ export const BottomPanel = styled.div`
 	}
 `;
 
-export const TopPanel = styled.div`
+const TopPanel = styled.div`
 	align-items: flex-start;
 	display: flex;
 	justify-content: space-between;
 `;
 
-export const Link = styled.div`
+const Link = styled.div`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -61,7 +56,20 @@ export const Link = styled.div`
 	}
 `;
 
-export const LinkIcon = styled.div`
-	display: flex;
+export const linkIconStyles = css`
 	margin-right: 3px;
 `;
+
+export const titleIconStyles = css`
+	min-width: 16px;
+	margin-right: 3px;
+`;
+
+export const Styled = {
+	Wrapper,
+	Title,
+	Content,
+	BottomPanel,
+	TopPanel,
+	Link,
+};

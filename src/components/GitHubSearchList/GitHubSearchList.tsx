@@ -5,7 +5,7 @@ import { PageLayout, Input, Spin, ListItem, Button } from '../../ui';
 import { Data, SearchResultItemEdge } from '../../types';
 import { RepositoryInfoRow } from '../RepositoryInfoRow';
 
-import * as Styled from './GitHubSearchList.styled';
+import { Styled, headerIconStyles, butoonRowStyles } from './GitHubSearchList.styled';
 
 type Props = {
 	className?: string;
@@ -30,11 +30,7 @@ export const GitHubSearchList: React.FC<Props> = ({
 		() => (
 			<Styled.Header>
 				<Input type='text' value={valueInner} onChange={onChangeInner} placeholder='Search...' />
-				{loading && (
-					<Styled.HeaderIcon>
-						<Spin />
-					</Styled.HeaderIcon>
-				)}
+				{loading && <Spin css={headerIconStyles} />}
 			</Styled.Header>
 		),
 		[loading, onChangeInner, valueInner]
@@ -77,10 +73,8 @@ export const GitHubSearchList: React.FC<Props> = ({
 			<>
 				{searchResults.edges.map(repositoryRender)}
 				{searchResults.pageInfo.hasNextPage && (
-					<ListItem>
-						<Styled.UpdateButton>
-							<Button onClick={onMoreClick}>More List</Button>
-						</Styled.UpdateButton>
+					<ListItem css={butoonRowStyles}>
+						<Button onClick={onMoreClick}>More List</Button>
 					</ListItem>
 				)}
 			</>

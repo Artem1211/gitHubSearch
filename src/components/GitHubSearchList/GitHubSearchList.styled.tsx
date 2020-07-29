@@ -1,16 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Header = styled.div`
+const Header = styled.div`
 	display: flex;
 	align-items: center;
 `;
 
-export const HeaderIcon = styled.div`
+export const headerIconStyles = css`
 	margin-left: 10px;
 	display: flex;
 `;
 
-export const UpdateButton = styled.div`
+export const butoonRowStyles = css`
 	display: flex;
 	justify-content: center;
 `;
+
+export const Styled = {
+	Header,
+};

@@ -1,15 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 type Props = { disabled?: boolean };
-export const resetButtonStyles = css`
-	padding: 0;
-	border: none;
-	outline: none;
-	font: inherit;
-	text-decoration: none;
-	color: inherit;
-	background-color: transparent;
-`;
 
 export const Icon = styled.span`
 	display: flex;
@@ -17,7 +8,8 @@ export const Icon = styled.span`
 `;
 
 export const Wrapper = styled.button<Props>`
-	${resetButtonStyles};
+	outline: none;
+	text-decoration: none;
 	position: relative;
 	display: inline-flex;
 	align-items: center;

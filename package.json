@@ -21,9 +21,9 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook",
     "codegen": "graphql-codegen --config codegen.yml"
@@ -48,16 +48,19 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.17.6",
+    "@graphql-codegen/introspection": "1.17.6",
+    "@graphql-codegen/typescript": "1.17.6",
+    "@graphql-codegen/typescript-operations": "1.17.6",
+    "@graphql-codegen/typescript-react-apollo": "1.17.6",
+    "@graphql-codegen/typescript-resolvers": "1.17.6",
     "@storybook/react": "^5.3.19",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "customize-cra": "^1.0.0",
     "prettier": "2.0.5",
-    "type-coverage": "^2.7.2",
-    "@graphql-codegen/typescript": "1.17.6",
-    "@graphql-codegen/typescript-operations": "1.17.6",
-    "@graphql-codegen/typescript-resolvers": "1.17.6",
-    "@graphql-codegen/typescript-react-apollo": "1.17.6",
-    "@graphql-codegen/introspection": "1.17.6"
+    "react-app-rewired": "^2.1.6",
+    "type-coverage": "^2.7.2"
   }
 }

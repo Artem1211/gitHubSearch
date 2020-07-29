@@ -4,7 +4,7 @@ import { IconStar, IconFork, IconLib } from '../../icons';
 import { Button, LanguageBlock } from '../../ui';
 import { Repository } from '../../types';
 
-import * as Styled from './RepositoryInfoRow.styled';
+import { titleIconStyles, linkIconStyles, Styled } from './RepositoryInfoRow.styled';
 
 type Props = {
 	className?: string;
@@ -23,9 +23,7 @@ export const RepositoryInfoRow: React.FC<Props> = ({
 		<Styled.Wrapper className={className}>
 			<Styled.TopPanel>
 				<Styled.Title href={url}>
-					<Styled.TitleIcon>
-						<IconLib />
-					</Styled.TitleIcon>
+					<IconLib css={titleIconStyles} />
 					{nameWithOwner}
 				</Styled.Title>
 				<Button
@@ -42,15 +40,11 @@ export const RepositoryInfoRow: React.FC<Props> = ({
 					<LanguageBlock name={primaryLanguage.name} color={primaryLanguage.color} />
 				)}
 				<Styled.Link>
-					<Styled.LinkIcon>
-						<IconStar />
-					</Styled.LinkIcon>
+					<IconStar css={linkIconStyles} />
 					{stargazers.totalCount}
 				</Styled.Link>
 				<Styled.Link>
-					<Styled.LinkIcon>
-						<IconFork />
-					</Styled.LinkIcon>
+					<IconFork css={linkIconStyles} />
 					{forkCount}
 				</Styled.Link>
 			</Styled.BottomPanel>

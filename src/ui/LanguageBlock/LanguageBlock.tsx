@@ -6,7 +6,8 @@ import * as Styled from './LanguageBlock.styled';
 
 type Props = {
 	className?: string;
-} & Language;
+	color?: string;
+} & Omit<Language, 'color'>;
 
 export const LanguageBlock: React.FC<Props> = ({ className, color, name }) => {
 	return (

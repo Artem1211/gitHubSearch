@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 
 import { YOUR_GIT_HUB_TOKEN } from '../../constants';
 import { GitHubSearchList } from '../../containers/GitHubSearchList';
+import { GlobalStyle } from '../../ui';
 
 import * as Styled from './App.styled';
 
@@ -17,7 +18,7 @@ const client = new ApolloClient({
 export const App = () => {
 	return (
 		<ApolloProvider client={client}>
-			<Styled.GlobalStyle />
+			<GlobalStyle />
 			<Styled.Wrapper>
 				<GitHubSearchList />
 			</Styled.Wrapper>

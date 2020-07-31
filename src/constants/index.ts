@@ -1,1 +1,1 @@
-export const YOUR_GIT_HUB_TOKEN = ''
+export const YOUR_GIT_HUB_TOKEN = 'f937aa98d04037aec6357f0791893fa994c247e1';

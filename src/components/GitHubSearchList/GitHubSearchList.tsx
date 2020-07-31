@@ -9,8 +9,8 @@ import { Styled, headerIconStyles, butoonRowStyles } from './GitHubSearchList.st
 
 type Props = {
 	className?: string;
-	valueInner: string;
-	onChangeInner: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	searchValue: string;
+	onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	loading: boolean;
 	error?: ApolloError;
 	data?: Data;
@@ -19,8 +19,8 @@ type Props = {
 
 export const GitHubSearchList: React.FC<Props> = ({
 	className,
-	valueInner,
-	onChangeInner,
+	searchValue,
+	onSearchChange,
 	loading,
 	data,
 	error,
@@ -29,11 +29,11 @@ export const GitHubSearchList: React.FC<Props> = ({
 	const renderHeader = useCallback(
 		() => (
 			<Styled.Header>
-				<Input type='text' value={valueInner} onChange={onChangeInner} placeholder='Search...' />
+				<Input type='text' value={searchValue} onChange={onSearchChange} placeholder='Search...' />
 				{loading && <Spin css={headerIconStyles} />}
 			</Styled.Header>
 		),
-		[loading, onChangeInner, valueInner]
+		[loading, onSearchChange, searchValue]
 	);
 
 	const repositoryRender = useCallback((el: SearchResultItemEdge) => {

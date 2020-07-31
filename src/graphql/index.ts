@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
-export const EXCHANGE_RATES = gql`
-	query Search($search: String!, $cursor: String) {
+export const GET_REPOSITORY_LIST = gql`
+	query search($search: String!, $cursor: String) {
 		search(query: $search, type: REPOSITORY, first: 5, after: $cursor) {
 			repositoryCount
 			pageInfo {

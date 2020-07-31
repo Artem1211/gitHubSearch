@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
-import { EXCHANGE_RATES } from '../../graphql';
+import { GET_REPOSITORY_LIST } from '../../graphql';
 import { useInput, useDebounce } from '../../hooks';
 import { Data, QueryVars } from '../../types';
 import { GitHubSearchList as GitHubSearchListComponent } from '../../components/GitHubSearchList';
@@ -11,12 +11,15 @@ type Props = {
 };
 
 export const GitHubSearchList: React.FC<Props> = ({ className }) => {
-	const { value, setValue } = useInput('repository');
+	const {
+		value,
+		bind: { onChange },
+	} = useInput('repository');
 
-	const [valueInner, onChangeInner] = useDebounce(value, setValue);
+	const debouncedValue = useDebounce(value, 500);
 
-	const { loading, error, data, fetchMore } = useQuery<Data, QueryVars>(EXCHANGE_RATES, {
-		variables: { search: value },
+	const { loading, error, data, fetchMore } = useQuery<Data, QueryVars>(GET_REPOSITORY_LIST, {
+		variables: { search: debouncedValue },
 		fetchPolicy: 'cache-and-network',
 	});
 
@@ -41,8 +44,8 @@ export const GitHubSearchList: React.FC<Props> = ({ className }) => {
 	return (
 		<GitHubSearchListComponent
 			className={className}
-			valueInner={valueInner}
-			onChangeInner={onChangeInner}
+			searchValue={value}
+			onSearchChange={onChange}
 			loading={loading}
 			error={error}
 			data={data}
